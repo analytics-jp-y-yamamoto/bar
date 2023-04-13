@@ -40,7 +40,7 @@ def main_page():
 
     fig1, ax1 = plt.subplots()
 
-    ax1.barh(top5.index.values,top5)
+    ax1.bar(top5.index.values,top5)
     ax1.set_title(shop_list_selector+"店上位5位売り上げ")
     ax1.set_xlabel("売上年月日")
     ax1.set_ylabel("総売上")
@@ -48,7 +48,7 @@ def main_page():
 
     fig2, ax2 = plt.subplots()
 
-    ax2.barh(st.session_state.df0.index.values,st.session_state.df0[:][shop_list_selector])
+    ax2.bar(st.session_state.df0.index.values,st.session_state.df0[:][shop_list_selector])
     ax2.set_title(shop_list_selector+"店売り上げ")
     ax2.set_xlabel("売上年月日")
     ax2.set_ylabel("総売上")
