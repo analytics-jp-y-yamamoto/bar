@@ -38,21 +38,19 @@ def main_page():
 
     top5=st.session_state.df0.sort_values(shop_list_selector,ascending=False)[:5][shop_list_selector]
 
-    fig1, ax1 = plt.subplots()
+    fig1, ax1 = plt.subplots(figsize=(6.4,4.8))
 
     ax1.bar(top5.index.values,top5)
     ax1.set_title(shop_list_selector+"店上位5位売り上げ")
     ax1.set_xlabel("売上年月日")
     ax1.set_ylabel("総売上")
-    ax1.invert_yaxis()
 
-    fig2, ax2 = plt.subplots()
+    fig2, ax2 = plt.subplots(figsize=(9.0,5.4))
 
     ax2.bar(st.session_state.df0.index.values,st.session_state.df0[:][shop_list_selector])
     ax2.set_title(shop_list_selector+"店売り上げ")
     ax2.set_xlabel("売上年月日")
     ax2.set_ylabel("総売上")
-    ax2.invert_yaxis()
 
     st.pyplot(fig1)
     st.pyplot(fig2)
